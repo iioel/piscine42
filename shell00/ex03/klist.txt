@@ -1,0 +1,5 @@
+Credentials cache: API:4A036A11-432B-4DC3-A2E2-407E5A2D31C7
+        Principal: ycornamu@42LAUSANNE.CH
+
+  Issued                Expires               Principal
+Jul  5 11:41:23 2021  Jul  5 21:41:16 2021  krbtgt/42LAUSANNE.CH@42LAUSANNE.CH
