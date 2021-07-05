@@ -1,1 +1,2 @@
-git log -5 --pretty=format:"%H" --no-patch
+#!/bin/sh
+git log -5 --pretty=tformat:"%H" --no-patch
