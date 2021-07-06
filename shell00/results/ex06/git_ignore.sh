@@ -1,1 +1,2 @@
-git check-ignore **/* **/.*
+#!/bin/sh
+git check-ignore * .* **/* **/.*
