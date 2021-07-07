@@ -1,2 +1,2 @@
 #!/bin/sh
-id -Gn ycornamu | tr ' ' ','
+id -Gn $FT_USER | tr ' ' ','
