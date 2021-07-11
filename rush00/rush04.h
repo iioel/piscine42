@@ -1,3 +1,5 @@
+// Condition (preprocesseur) pour eviter de definir les
+// prototypes de fonction a double (include dans main.c et rush04.c)
 #ifndef RUSH04_H
 # define RUSH04_H
 
