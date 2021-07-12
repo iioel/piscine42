@@ -1,8 +1,8 @@
-//#include "rush00.h"
+#include "rush00.h"
 //#include "rush01.h"
 //#include "rush02.h"
 //#include "rush03.h"
-#include "rush04.h"
+//#include "rush04.h"
 
 int	main(void)
 {

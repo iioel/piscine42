@@ -5,12 +5,12 @@ void	rush(int x, int y)
 {
 	struct s_Chars	chars;
 
-	chars.top_l = 'A';
-	chars.top_r = 'C';
-	chars.btm_l = 'C';
-	chars.btm_r = 'A';
-	chars.side_updn = 'B';
-	chars.side_lr = 'B';
+	chars.top_l = '/';
+	chars.top_r = '\\';
+	chars.btm_l = '\\';
+	chars.btm_r = '/';
+	chars.side_updn = '*';
+	chars.side_lr = '*';
 	c_rev(&x, &y, &chars);
 	r_engine(x, y, chars);
 }
