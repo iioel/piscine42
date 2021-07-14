@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 13:10:28 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/14 16:31:52 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/15 00:26:57 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strstr(char *str, char *to_find)
 			return (str + i);
 		i++;
 	}
-	return (NULL);
+	return ((void *)0);
 }
 
 unsigned int	ft_strlen(char *str)
@@ -66,7 +66,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 // 	char	*str2;
 // 
 // 	str1 = "Hello World!";
-// 	str2 = "";
+// 	str2 = "w";
 // 	printf("strstr    : %ld\n", strstr(str1, str2) - str1);
 // 	printf("ft_strstr : %ld\n", ft_strstr(str1, str2) - str1);
 // }
