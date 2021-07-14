@@ -6,21 +6,21 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 13:10:28 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/14 14:26:58 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/14 16:31:52 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 // #include <string.h>
 
-size_t	ft_strlen(char *str);
-int		ft_strncmp(char *s1, char *s2, unsigned int n);
+unsigned int	ft_strlen(char *str);
+int				ft_strncmp(char *s1, char *s2, unsigned int n);
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	size_t	i;
-	size_t	size_str;
-	size_t	size_to_find;
+	unsigned int	i;
+	unsigned int	size_str;
+	unsigned int	size_to_find;
 
 	i = 0;
 	size_str = ft_strlen(str);
@@ -36,9 +36,9 @@ char	*ft_strstr(char *str, char *to_find)
 	return (NULL);
 }
 
-size_t	ft_strlen(char *str)
+unsigned int	ft_strlen(char *str)
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
 	while (str[i])

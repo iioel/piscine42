@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 14:28:13 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/14 14:52:50 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/14 16:35:27 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ unsigned int	ft_strlen(char *str);
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
+	unsigned int	size_src;
 	unsigned int	size_dest;
 
 	i = 0;
+	size_src = ft_strlen(src);
 	size_dest = ft_strlen(dest);
 	while (src[i] != '\0' && (size_dest + i + 1) < size)
 	{
@@ -28,7 +30,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		i++;
 	}
 	dest[size_dest + i] = '\0';
-	return (size_dest + i);
+	return (size_dest + size_src);
 }
 
 unsigned int	ft_strlen(char *str)
@@ -44,10 +46,10 @@ unsigned int	ft_strlen(char *str)
 // int	main(void)
 // {
 // 	int		i;
-// 	int		n = 20;
-// 	int		c = 20;
-// 	char	s1[20] = "Hello";
-// 	char	s2[20] = "Hello";
+// 	int		n = 10;
+// 	int		c = 10;
+// 	char	s1[10] = "Hello";
+// 	char	s2[10] = "Hello";
 // 	char	*s3;
 // 
 // 	s3 = " World!";
