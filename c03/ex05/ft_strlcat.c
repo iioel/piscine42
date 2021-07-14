@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/12 11:21:51 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/14 12:16:50 by ycornamu         ###   ########.fr       */
+/*   Created: 2021/07/14 14:28:13 by ycornamu          #+#    #+#             */
+/*   Updated: 2021/07/14 14:52:50 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 
 unsigned int	ft_strlen(char *str);
 
-char	*ft_strcat(char *dest, char *src)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	size_dest;
 
 	i = 0;
 	size_dest = ft_strlen(dest);
-	while (src[i] != '\0')
+	while (src[i] != '\0' && (size_dest + i + 1) < size)
 	{
 		dest[size_dest + i] = src[i];
 		i++;
 	}
 	dest[size_dest + i] = '\0';
-	return (dest);
+	return (size_dest + i);
 }
 
 unsigned int	ft_strlen(char *str)
@@ -44,19 +44,20 @@ unsigned int	ft_strlen(char *str)
 // int	main(void)
 // {
 // 	int		i;
-// 	int		n = 13;
-// 	char	s1[13] = "Hello";
-// 	char	s2[13] = "Hello";
+// 	int		n = 20;
+// 	int		c = 20;
+// 	char	s1[20] = "Hello";
+// 	char	s2[20] = "Hello";
 // 	char	*s3;
 // 
 // 	s3 = " World!";
-// 	printf("strcat    : %s\n", strcat(s2, s3));
+// 	printf("strlcat    : %lu, %s\n", strlcat(s2, s3, c), s2);
 // 	printf("hex       : ");
 // 	i = 0;
 // 	while (i < n)
 // 		printf("%x ", *(s2 + i++));
 // 	printf("\n");
-// 	printf("ft_strcat : %s\n", ft_strcat(s1, s3));
+// 	printf("ft_strlcat : %d, %s\n", ft_strlcat(s1, s3, c), s1);
 // 	printf("hex       : ");
 // 	i = 0;
 // 	while (i < n)
