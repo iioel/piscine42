@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 00:51:52 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/15 18:06:08 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/16 00:53:31 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 unsigned int	ft_digitnbr(unsigned int nb);
 void			ft_putchar(char c);
-int				ft_power(int base, int pow);
+int				ft_pow(int base, int pow);
 
 void	ft_putnbr(int nb)
 {
@@ -33,13 +33,13 @@ void	ft_putnbr(int nb)
 	nb_digit = ft_digitnbr(u_nb);
 	while (nb_digit)
 	{
-		digit = u_nb / ft_power(10, --nb_digit);
-		u_nb -= digit * ft_power(10, nb_digit);
+		digit = u_nb / ft_pow(10, --nb_digit);
+		u_nb -= digit * ft_pow(10, nb_digit);
 		ft_putchar(digit + '0');
 	}
 }
 
-int	ft_power(int base, int pow)
+int	ft_pow(int base, int pow)
 {
 	int	res;
 
