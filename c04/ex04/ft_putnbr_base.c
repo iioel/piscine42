@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 15:21:39 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/19 17:55:09 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/19 17:59:20 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,7 @@ int	ft_base_is_valid(char *base)
 	{
 		if (base[size_base] == '-' || base[size_base] == '+'
 			|| ft_is_in_base(base[size_base], base, size_base))
-		{
-			printf("out\n");
 			return (0);
-		}
 		size_base++;
 	}
 	if (size_base < 1)
@@ -76,8 +73,8 @@ void	ft_print_nbr_base(unsigned int nbr, unsigned int size_base, char *base)
 }
 
 // #include <stdio.h>
-//
+// 
 // int	main(void)
 // {
-// 	ft_putnbr_base(16, "0123456789abcdef");
+// 	ft_putnbr_base(-16, "0123456789abcdef");
 // }

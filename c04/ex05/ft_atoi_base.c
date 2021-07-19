@@ -6,25 +6,31 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 18:07:33 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/19 18:29:49 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/19 18:28:57 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_remove_space(char **str);
 int		ft_get_sign(char **str);
+int		ft_base_is_valid(char *base);
+int		ft_is_in_base(char c, char *base, int skip);
 
-int	ft_atoi(char *str)
+int	ft_atoi_base(char *str, char *base)
 {
-	int	factor;
-	int	result;
+	int				factor;
+	int				result;
+	unsigned int	size_base;
 
+	size_base = ft_base_is_valid(base);
 	result = 0;
-	ft_remove_space(&str);
+	while (*str == '\t' || *str == '\n' || *str == '\v'
+		|| *str == '\f' || *str == '\r' || *str == ' ')
+		str++;
 	factor = ft_get_sign(&str);
-	while (*str >= '0' && *str <= '9')
+	while (ft_is_in_base(*str, base, 0) != -1)
 	{
-		result *= 10;
-		result += *(str++) - '0';
+		result *= size_base;
+		result += ft_is_in_base(*(str++), base, 0);
 	}
 	return (result * factor);
 }
@@ -40,18 +46,35 @@ int	ft_get_sign(char **str)
 	return (result);
 }
 
-char	*ft_remove_space(char **str)
+int	ft_base_is_valid(char *base)
 {
-	while (**str == '\t' || **str == '\n' || **str == '\v'
-		|| **str == '\f' || **str == '\r' || **str == ' ')
-		(*str)++;
-	return (*str);
+	unsigned int	size_base;
+
+	size_base = 0;
+	while (base[size_base])
+	{
+		if (base[size_base] == '-' || base[size_base] == '+'
+			|| ft_is_in_base(base[size_base], base, size_base + 1) != -1)
+			return (0);
+		size_base++;
+	}
+	if (size_base < 1)
+		return (0);
+	return (size_base);
+}
+
+int	ft_is_in_base(char c, char *base, int skip)
+{
+	while (*(base + skip))
+		if (c == *(base + skip++))
+			return (skip - 1);
+	return (-1);
 }
 
 // #include <stdio.h>
 // 
 // int	main(void)
 // {
-// 	char *str = "    --+--+-+-12r548ferybfrueb";
-// 	printf("\"%s\", %d\n", str, ft_atoi(str));
+// 	char *str = "f";
+// 	printf("\"%s\", %d\n", str, ft_atoi_base(str, "0123456789abcdef"));
 // }
