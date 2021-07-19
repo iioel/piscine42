@@ -6,11 +6,10 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 00:51:52 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/16 00:53:31 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/19 20:27:32 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
 #include <unistd.h>
 
 unsigned int	ft_digitnbr(unsigned int nb);
@@ -58,7 +57,10 @@ unsigned int	ft_digitnbr(unsigned int nb)
 {
 	unsigned int	nb_digit;
 
-	nb_digit = 0;
+	if (nb)
+		nb_digit = 0;
+	else
+		nb_digit = 1;
 	while (nb)
 	{
 		nb /= 10;
@@ -69,5 +71,5 @@ unsigned int	ft_digitnbr(unsigned int nb)
 
 // int	main(void)
 // {
-// 	ft_putnbr(-2147483648);
+// 	ft_putnbr(100);
 // }

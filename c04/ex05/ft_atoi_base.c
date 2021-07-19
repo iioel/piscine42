@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 18:07:33 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/19 18:28:57 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/19 20:28:10 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	ft_atoi_base(char *str, char *base)
 	unsigned int	size_base;
 
 	size_base = ft_base_is_valid(base);
+	if (! size_base)
+		return (0);
 	result = 0;
 	while (*str == '\t' || *str == '\n' || *str == '\v'
 		|| *str == '\f' || *str == '\r' || *str == ' ')
@@ -53,7 +55,7 @@ int	ft_base_is_valid(char *base)
 	size_base = 0;
 	while (base[size_base])
 	{
-		if (base[size_base] == '-' || base[size_base] == '+'
+		if (base[size_base] == '-' || base[size_base] == '+' || base[size_base] == ' '
 			|| ft_is_in_base(base[size_base], base, size_base + 1) != -1)
 			return (0);
 		size_base++;
@@ -76,5 +78,5 @@ int	ft_is_in_base(char c, char *base, int skip)
 // int	main(void)
 // {
 // 	char *str = "f";
-// 	printf("\"%s\", %d\n", str, ft_atoi_base(str, "0123456789abcdef"));
+// 	printf("\"%s\", %d\n", str, ft_atoi_base(str, "0123 456789abcdef"));
 // }

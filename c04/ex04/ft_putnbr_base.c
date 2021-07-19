@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 15:21:39 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/19 17:59:20 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/19 20:21:41 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ int	ft_base_is_valid(char *base)
 
 int	ft_is_in_base(char c, char *base, int skip)
 {
-	while (*(base + skip))
-		if (c == *(base + ++skip))
+	while (*(base + ++skip))
+		if (c == *(base + skip))
 			return (1);
 	return (0);
 }
