@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 15:21:39 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/19 20:21:41 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/19 22:11:18 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_base_is_valid(char *base)
 			return (0);
 		size_base++;
 	}
-	if (size_base < 1)
+	if (size_base <= 1)
 		return (0);
 	return (size_base);
 }

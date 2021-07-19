@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 18:07:33 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/19 20:28:10 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/19 22:11:46 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,13 @@ int	ft_base_is_valid(char *base)
 	size_base = 0;
 	while (base[size_base])
 	{
-		if (base[size_base] == '-' || base[size_base] == '+' || base[size_base] == ' '
+		if (base[size_base] == '-' || base[size_base] == '+'
+			|| base[size_base] == ' '
 			|| ft_is_in_base(base[size_base], base, size_base + 1) != -1)
 			return (0);
 		size_base++;
 	}
-	if (size_base < 1)
+	if (size_base <= 1)
 		return (0);
 	return (size_base);
 }
