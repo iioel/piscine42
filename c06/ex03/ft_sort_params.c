@@ -7,7 +7,7 @@ int	main(int argc, char **argv)
 {
 	if (argc > 1)
 	{
-		ft_sort_string(argc - 1, &argv[1]);
+		ft_sort_string(argc - 1, (argv + 1));
 		while (*(++argv) != NULL)
 		{
 			while (**argv)
@@ -19,17 +19,18 @@ int	main(int argc, char **argv)
 
 void	ft_sort_string(int nb, char **list_string)
 {
-	char *tmp_string;
-	int i;
-	int j;
+	char	*tmp_string;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 1;
 	while (j)
 	{
+		i = 0;
+		j = 0;
 		while (i < nb)
 		{
-			j = 0;
 			if (i != 0 && ft_strcmp(list_string[i - 1], list_string[i]) > 0)
 			{
 				tmp_string = list_string[i];
