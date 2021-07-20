@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 18:45:10 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/19 18:45:15 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/20 20:32:12 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@ int	ft_iterative_factorial(int nb)
 {
 	int	res;
 
-	if (nb <= 0)
+	if (nb < 0)
 		return (0);
+	else if (nb == 0)
+		return (1);
 	res = nb;
 	while (--nb > 0)
 		res *= nb;
