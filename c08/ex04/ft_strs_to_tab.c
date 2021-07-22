@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:02:56 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/22 17:06:32 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/22 22:49:20 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	t_stock_str	*tab;
 	t_stock_str	s_str;
 
+	if (ac < 0)
+		ac = 0;
 	tab = malloc((ac + 1) * sizeof(t_stock_str));
 	if (tab == NULL)
-		return (tab);
+		return (NULL);
 	i = 0;
 	while (i < ac)
 	{
@@ -34,7 +36,9 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		tab[i] = s_str;
 		i++;
 	}
-	tab[i].str = "\0";
+	tab[i].str = 0;
+	tab[i].size = 0;
+	tab[i].copy = 0;
 	return (tab);
 }
 
@@ -68,3 +72,19 @@ int	ft_strlen(char *str)
 	}
 	return (i);
 }
+
+// #include <stdio.h>
+// 
+// int	main(int ac, char **av)
+// {
+// 	t_stock_str *t;
+// 
+// 	t = ft_strs_to_tab(ac - 1, av + 1);
+// 	while (t->str != 0)
+// 	{
+// 		printf("%s\n", t->str);
+// 		printf("%d\n", t->size);
+// 		printf("%s\n", t->copy);
+// 		t++;
+// 	}
+// }
