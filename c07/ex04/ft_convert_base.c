@@ -19,7 +19,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 
 	size_from = ft_base_is_valid(base_from);
 	size_to = ft_base_is_valid(base_to);
-	if (! size_from || ! size_to)
+	if (! (size_from && size_to))
 		return (NULL);
 	while (*nbr == '\t' || *nbr == '\n' || *nbr == '\v'
 		|| *nbr == '\f' || *nbr == '\r' || *nbr == ' ')
@@ -92,9 +92,9 @@ int	ft_digitnbr(unsigned int nb, unsigned int base)
 	return (nb_digit);
 }
 
-// #include <stdio.h>
-// 
-// int	main(void)
-// {
-// 	printf("%s\n", ft_convert_base("2", "0123456789", "01"));
-// }
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%s\n", ft_convert_base("2", "0123456789", "01"));
+}
