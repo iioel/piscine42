@@ -1,0 +1,67 @@
+Functions to create :
+
+	int main(int ac, char **av);
+		If ac == 0:
+			read on std_in and use default dict;
+		If ac == 1:
+			use the number passed in parameters and default dict;
+		If ac == 2:
+			use custom dict passed in parameters aswell use the nuber passed in parameters
+		The main fuction must also open() the dict to pass it to the ft_print function.
+		It should also catch the error if ft_print was unable to print the number successfully.
+		If ft_print success it will return 0, if other throw an error.
+
+DONE	int	ft_print(char *str, int dict); 
+			Must print the number using other functions.
+			When calling ft_find_nbr(), if NULL is returned, catch the error and return 1 to the main.
+			Should breakdown the string in hundreds, thausands, millions, billions, ...
+			For example : 78'274'893
+				1. count the number of digits with ft_strlen(), in this case 8;
+				2. Resolve the modulo 3 of the number of digit, 8 % 3 = 2;
+				3. If nb_digit % 3 :
+					== 1 : call ft_find_number and append it to str_to_print with a space after it.
+					== 2 : call ft_print_tens and append a space to str_to_print.
+					== 0 : call ft_print_hundreds and append a space to str_to_print.
+				4. Substract the modulo number to nb_digit, if module == 0, substract 3.
+				5. Call ft_get_zeros() with nb_digit and then seach for the return string with ft_find_nbr()
+					and append a space to str_to_print.
+				6. Repeat step 2.
+
+DONE	int ft_print_tens(char *str, int dict, char **str_to_print);
+			The function should break the string in two.
+			If the first digit is 0, then silence it and search only for last digit.
+			For example 74 will become 70 and 4.
+			If less than 20 and the last digit is equal to zero then the number can't be break in half
+			She will also call ft_find_nbr().
+
+DONE	int ft_print_hundreds(char *str, int dict, char **str_to_print);
+			The function should break the number in two part and call ft_print_tens.
+			If the first digit is 0, then silence it and search only for last digits.
+			For example 836 will become 800 and 36.
+				800 will become 8 and 100.
+				36 will be put in ft_print_tens.
+
+	char **ft_append_to_str(char *str, char **str_to_print);
+		The function will append str to str_to_print string and increment pointer.
+
+	char *ft_find_nbr(char *str, int dict);
+		Must search in dict the corresponding str, and return the associated text.
+		The associated text must be after ':' and if nothing is found, return an NULL.
+		It should also clean the associated text by removing start, end and extra spaces.
+
+DONE	char *ft_get_zeros(int nb_zeros);
+			The function must return 1 followed by the number of zeros.
+			If nb_zeros = 4; "10000" will be returned.
+			The malloc() function will be used to create and return the string.
+
+DONE	int ft_strlen(char *str);
+		It will be used to count the numbers of digit in str.
+
+	int ft_count(char *str, int dict);
+		Same funtion as ft_print(), as it count the number of chars instead of printing it.
+
+DONE	int ft_count_tens(char *str, int dict);
+			Same funtion as ft_print_tens(), as it count the number of chars instead of printing it.
+
+DONE	int ft_count_hundreds(char *str, int dict);
+			Same funtion as ft_print_hundreds(), as it count the number of chars instead of printing it.
