@@ -6,13 +6,13 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 23:32:11 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/07/22 23:39:29 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/07/27 14:25:34 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	putstr(char *str)
+void	ft_putstr(char *str)
 {
 	while (*str)
 		ft_putchar(*(str++));
