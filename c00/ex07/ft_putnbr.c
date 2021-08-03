@@ -10,26 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_putnbr.h"
 #include <unistd.h>
 
 void	ft_putchar(char c);
 
 void	ft_putnbr(int n)
 {
+	unsigned int	u_nbr;
+
 	if (n < 0)
 	{
 		ft_putchar('-');
-		n = n * -1;
+		u_nbr = (unsigned int)(n * -1);
 	}
-	if (n >= 10)
+	else
+		u_nbr = n;
+	if (u_nbr >= 10)
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		ft_putnbr(u_nbr / 10);
+		ft_putnbr(u_nbr % 10);
 	}
 	else
 	{
-		ft_putchar(n + '0');
+		ft_putchar(u_nbr + '0');
 	}
 }
 

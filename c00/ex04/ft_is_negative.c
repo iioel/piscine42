@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_is_negative.h"
 #include <unistd.h>
 
 void	ft_is_negative(int n)

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_print_comb.h"
 #include <unistd.h>
 
 void	ft_print_comb(void)

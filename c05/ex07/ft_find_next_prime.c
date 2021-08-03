@@ -61,20 +61,20 @@ int	ft_find_next_sqrt(int nb)
 	return (0);
 }
 
-#include <stdio.h>
-
-int	main(void)
-{
-	int	n;
-	int	count;
-
-	n = 536848900;
-	count = 0;
-	while (count < 10)
-	{
-		n = ft_find_next_prime(n);
-		printf("prime = %d\n", n);
-		n++;
-		count++;
-	}
-}
+// #include <stdio.h>
+// 
+// int	main(void)
+// {
+// 	int	n;
+// 	int	count;
+// 
+// 	n = 536848900;
+// 	count = 0;
+// 	while (count < 10)
+// 	{
+// 		n = ft_find_next_prime(n);
+// 		printf("prime = %d\n", n);
+// 		n++;
+// 		count++;
+// 	}
+// }

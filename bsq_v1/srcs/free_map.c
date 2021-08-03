@@ -4,7 +4,7 @@
 
 void	free_map_values(t_map *map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < map->height)

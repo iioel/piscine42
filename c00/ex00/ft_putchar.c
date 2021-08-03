@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_putchar.h"
 #include <unistd.h>
 
 void	ft_putchar(char c)

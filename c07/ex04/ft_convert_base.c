@@ -92,9 +92,9 @@ int	ft_digitnbr(unsigned int nb, unsigned int base)
 	return (nb_digit);
 }
 
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("%s\n", ft_convert_base("2", "0123456789", "01"));
-}
+// #include <stdio.h>
+// 
+// int	main(void)
+// {
+// 	printf("%s\n", ft_convert_base("2", "0123456789", "01"));
+// }
